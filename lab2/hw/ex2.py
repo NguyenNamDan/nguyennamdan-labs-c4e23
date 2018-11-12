@@ -7,7 +7,7 @@ ulr = "http://s.cafef.vn/bao-cao-tai-chinh/VNM/IncSta/2017/3/0/0/ket-qua-hoat-do
 connect = urlopen(ulr)
 #2 download content
 raw_data = connect.read() 
-page_content = raw_data.decode("utf8")
+page_content = raw_data.decode("utf8") # page_content = urlopen(ulr).read().decode("utf8")
 #3 find ROI
 soup = BeautifulSoup(page_content, "html.parser")
 sec = soup.find("table", id= "tableContent")

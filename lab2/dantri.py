@@ -10,8 +10,11 @@ connect = urlopen(ulr)
 raw_data = connect.read() 
 page_content = raw_data.decode("utf8")
 
-with open("dantri.html", "w") as f: #Save
-    f.write(page_content)
+#save html to local file
+f = open('dantri.html', 'wb')
+f.write(page_content)
+f.close() 
+
 #3 find ROI
 soup = BeautifulSoup(page_content, "html.parser")
 ul = soup.find("ul", "ul1 ulnew") #tìm thẻ 
